@@ -1,30 +1,17 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
-import { motion } from 'framer-motion'
-
-const links = [
-  { to: '/', label: 'Home' },
-  { to: '/experience', label: 'Experience' },
-  { to: '/education', label: 'Education' },
-  { to: '/skills', label: 'Skills' },
-  { to: '/projects', label: 'Projects' },
-  { to: '/certifications', label: 'Certifications' },
-  { to: '/contact', label: 'Contact' },
-]
-
-export default function Navbar() {
-  const loc = useLocation()
+export default function Navbar({ dark, setDark }:{dark:boolean,setDark: (v:boolean)=>void}) {
+  const sections = ['home','experience','education','skills','projects','certifications','contact']
   return (
-    <motion.header initial={{ y: -50, opacity: 0 }} animate={{ y:0, opacity:1 }} transition={{ duration: 0.6 }} className="sticky top-0 z-40 bg-slate-900/70 backdrop-blur border-b border-slate-700">
+    <header className="fixed top-0 left-0 w-full z-50 bg-black/40 backdrop-blur">
       <div className="container flex items-center justify-between py-4">
-        <Link to="/" className="text-white font-bold text-lg">Shubham Gosai</Link>
+        <a href="#home" className="text-xl font-semibold">Shubham Gosai</a>
         <nav className="hidden md:flex gap-6">
-          {links.map(l=> (
-            <Link key={l.to} to={l.to} className={`text-slate-200 hover:text-white ${loc.pathname===l.to ? 'underline' : ''}`}>{l.label}</Link>
-          ))}
+          {sections.map(s => <a key={s} href={`#${s}`} className="hover:text-teal-300 capitalize">{s}</a>)}
         </nav>
-        <div className="md:hidden text-slate-200">Menu</div>
+        <div className="flex items-center gap-3">
+          <button onClick={() => setDark(!dark)} className="px-3 py-1 rounded bg-white/5">{dark? 'Light' : 'Dark'}</button>
+        </div>
       </div>
-    </motion.header>
+    </header>
   )
 }

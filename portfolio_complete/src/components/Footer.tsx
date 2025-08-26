@@ -1,11 +1,6 @@
 import React from 'react'
-
-export default function Footer(){ 
-  return (
-    <footer className="mt-12 py-6 border-t border-slate-800">
-      <div className="container text-center text-slate-400">
-        © 2025 Shubham Gosai — All rights reserved.
-      </div>
-    </footer>
-  )
-}
+export default function Footer(){ return (
+  <footer className="py-8 mt-12">
+    <div className="container text-center text-sm text-slate-400">© 2025 Shubham Gosai — All rights reserved.</div>
+  </footer>
+)}

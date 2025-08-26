@@ -1,31 +1,43 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 import Navbar from './components/Navbar'
-import Home from './pages/Home'
-import Experience from './pages/Experience'
-import Education from './pages/Education'
-import Skills from './pages/Skills'
-import Projects from './pages/Projects'
-import Certifications from './pages/Certifications'
-import Contact from './pages/Contact'
+import Home from './components/Home'
+import Experience from './components/Experience'
+import Education from './components/Education'
+import Skills from './components/Skills'
+import Projects from './components/Projects'
+import Certifications from './components/Certifications'
+import Contact from './components/Contact'
 import Footer from './components/Footer'
+import ToastProvider from './components/ToastProvider'
 
 export default function App() {
+  const [dark, setDark] = useState<boolean>(() => {
+    const val = localStorage.getItem('theme')
+    return val ? val === 'dark' : true
+  })
+
+  useEffect(() => {
+    document.documentElement.classList.toggle('dark', dark)
+    localStorage.setItem('theme', dark ? 'dark' : 'light')
+  }, [dark])
+
   return (
-    <div>
-      <Navbar />
-      <main className="container py-10">
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/experience' element={<Experience />} />
-          <Route path='/education' element={<Education />} />
-          <Route path='/skills' element={<Skills />} />
-          <Route path='/projects' element={<Projects />} />
-          <Route path='/certifications' element={<Certifications />} />
-          <Route path='/contact' element={<Contact />} />
-        </Routes>
-      </main>
-      <Footer />
-    </div>
+    <ToastProvider>
+      <div className={dark ? 'dark' : ''}>
+        <div className="min-h-screen">
+          <Navbar dark={dark} setDark={setDark} />
+          <main className="container">
+            <Home />
+            <Experience />
+            <Education />
+            <Skills />
+            <Projects />
+            <Certifications />
+            <Contact />
+          </main>
+          <Footer />
+        </div>
+      </div>
+    </ToastProvider>
   )
 }
