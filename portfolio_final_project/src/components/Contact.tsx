@@ -41,15 +41,14 @@ export default function Contact(){
             <a href="/ShubhamGosaiResume.pdf" download className="px-4 py-2 border rounded">Download Resume</a>
           </div>
         </form>
-        <div className="card">
-          <h3 className="font-semibold">Contact Info</h3>
-          <p className="mt-2">Email: <a href="mailto:shubham@example.com" className="text-teal-400">shubham@example.com</a></p>
-          <p className="mt-2">Location: Dehradun, India</p>
-          <div className="mt-4 flex gap-3">
-            <a href="https://www.instagram.com/shubhamg0sai/" target="_blank" className="p-2 bg-white/5 rounded">Instagram</a>
-            <a href="https://linkedin.com/in/shubhamg0sai/" target="_blank" className="p-2 bg-white/5 rounded">LinkedIn</a>
-            <a href="https://github.com/ShuBhamg0sai" target="_blank" className="p-2 bg-white/5 rounded">GitHub</a>
-            <a href="https://x.com/shubhamg0sai" target="_blank" className="p-2 bg-white/5 rounded">X</a>
+
+        <div className="card flex flex-col items-center justify-center">
+          <h3 className="font-semibold mb-3">Connect</h3>
+          <div className="flex gap-4 mt-2">
+            <a href="https://www.instagram.com/shubhamg0sai/" target="_blank" rel="noreferrer"><img src="/assets/icons/instagram.svg" alt="Instagram" className="w-8 h-8"/></a>
+            <a href="https://linkedin.com/in/shubhamg0sai/" target="_blank" rel="noreferrer"><img src="/assets/icons/linkedin.svg" alt="LinkedIn" className="w-8 h-8"/></a>
+            <a href="https://github.com/ShuBhamg0sai" target="_blank" rel="noreferrer"><img src="/assets/icons/github.svg" alt="GitHub" className="w-8 h-8"/></a>
+            <a href="https://x.com/shubhamg0sai" target="_blank" rel="noreferrer"><img src="/assets/icons/x.svg" alt="X" className="w-8 h-8"/></a>
           </div>
         </div>
       </div>
