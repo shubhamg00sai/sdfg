@@ -1,22 +1,23 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import ToastProvider from './components/ToastProvider'
 import './styles/custom.css'
 
 export default function App() {
-  const [dark, setDark] = useState<boolean>(() => {
+  const [dark, setDark] = useState<boolean>(()=>{
     const stored = localStorage.getItem('theme')
     if(stored) return stored==='dark'
     return typeof window!=='undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches
   })
+
   useEffect(()=>{
     if(dark) document.documentElement.classList.add('dark')
     else document.documentElement.classList.remove('dark')
     localStorage.setItem('theme', dark?'dark':'light')
   },[dark])
-  
-  const projects = Array.from({length:6}, (_,i)=>({title:'Project '+(i+1), image:'/assets/images/project-placeholder.png', link:'#'}))
-  const certificates = Array.from({length:4}, (_,i)=>({title:'Certificate '+(i+1), image:'/assets/images/certificate-placeholder.png', link:'#'}))
+
+  const projects = Array.from({length:6},(_,i)=>({title:'Project '+(i+1),image:'/assets/images/project-placeholder.png',link:'#'}))
+  const certificates = Array.from({length:4},(_,i)=>({title:'Certificate '+(i+1),image:'/assets/images/certificate-placeholder.png',link:'#'}))
 
   return(
     <ToastProvider>
