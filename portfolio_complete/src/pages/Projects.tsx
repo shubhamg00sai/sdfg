@@ -1,32 +1,34 @@
 import React from 'react'
-export default function Projects() {
+import { motion } from 'framer-motion'
+
+export default function Projects(){
   const projects = [
     { title: 'Voice_Gpt', desc: 'Control through voice in Windows/Linux terminal using OpenAI API', link: '#' },
     { title: 'Image_gpt', desc: 'Voice-based image creation tool', link: '#' },
-    { title: 'boobleshooter game', desc: 'Game using JavaScript, CSS, HTML, PHP', link: '#' },
-    { title: 'sea_diving Game', desc: 'Game using JavaScript, CSS, HTML', link: '#' },
-    { title: 'RdmVideoCall', desc: 'Coin-based video call app using Firebase Realtime DB', link: '#' },
+    { title: 'BoobleShooter', desc: 'Classic shooter game using JS/CSS/HTML/PHP', link: '#' },
+    { title: 'Sea_Diving', desc: '2D game built with JS & CSS', link: '#' },
+    { title: 'RdmVideoCall', desc: 'Coin-based video call app using Firebase', link: '#' },
     { title: 'Face-attendance-app', desc: 'Realtime face attendance application', link: '#' },
-    { title: 'MoviesMod', desc: 'Movies downloader application', link: '#' },
+    { title: 'MoviesMod', desc: 'Movies downloader app', link: '#' },
     { title: 'Erp_geu', desc: 'ERP for Graphic Era Hill University', link: '#' },
-    { title: 'FlyToHigh', desc: 'Android app for booking flights', link: '#' },
+    { title: 'FlyToHigh', desc: 'Android app to book flights', link: '#' },
     { title: 'UNO', desc: 'UNO game application with new logic', link: '#' },
-    { title: 'Portfolio', desc: 'My portfolio built with TypeScript, React, Tailwind', link: '#' },
-    { title: 'Jewelry', desc: 'Jewelry website built with JS, CSS, HTML', link: '#' }
+    { title: 'Portfolio', desc: 'This portfolio built with TypeScript & React', link: '#' },
+    { title: 'Jewelry', desc: 'E-commerce jewelry website', link: '#' },
   ]
 
   return (
     <section>
-      <h2 className="text-2xl font-bold mb-4">Projects</h2>
-      <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((p) => (
-          <article key={p.title} className="card">
+      <h2 className="section-title">Projects</h2>
+      <div className="grid md:grid-cols-3 gap-6">
+        {projects.map((p, i) => (
+          <motion.a key={i} href={p.link} target="_blank" rel="noreferrer" className="card hover:scale-105 transform transition" whileHover={{ y:-6 }} initial={{opacity:0, y:8}} whileInView={{opacity:1, y:0}} viewport={{once:true}}>
             <h3 className="font-semibold">{p.title}</h3>
-            <p className="text-sm mt-1">{p.desc}</p>
-            <div className="mt-3">
-              <a className="text-blue-600" href={p.link}>View Project</a>
+            <p className="text-sm text-slate-300 mt-2">{p.desc}</p>
+            <div className="mt-4">
+              <span className="text-teal-300 underline">View Project</span>
             </div>
-          </article>
+          </motion.a>
         ))}
       </div>
     </section>

@@ -1,4 +1,1 @@
-export function formatRange(start, end) {
-  if (!end) return start;
-  return `${start} - ${end}`;
-}
+export function noop() { return null }

@@ -1,5 +1,5 @@
 {
-  "name": "shubham-portfolio",
+  "name": "shubham-portfolio-animated",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -11,7 +11,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.0"
+    "react-router-dom": "^6.21.0",
+    "framer-motion": "^10.12.16"
   },
   "devDependencies": {
     "@types/react": "^18.2.21",

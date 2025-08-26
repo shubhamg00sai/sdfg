@@ -1,20 +1,27 @@
 import React from 'react'
-export default function Home() {
-  return (
-    <section>
-      <h1 className="text-3xl font-bold">Hi — I'm Shubham Gosai</h1>
-      <p className="mt-3 text-lg">Full Stack Developer Intern / Fresher</p>
+import { motion } from 'framer-motion'
 
-      <div className="mt-6 card">
-        <h2 className="text-xl font-semibold">Summary</h2>
-        <p className="mt-2">
-          Full Stack Developer with strong foundation in front-end and back-end development. Skilled in HTML, CSS, JavaScript, React.js, Node.js, Express.js, and databases (MySQL/MongoDB), with hands-on experience through academic projects and internships. Passionate about building responsive, user-friendly, and scalable web applications while continuously learning modern frameworks and tools.
-        </p>
-        <div className="mt-4 flex gap-3">
-          <a href="/ShubhamGosaiResume.pdf" download className="px-4 py-2 bg-blue-600 text-white rounded">Download Resume</a>
-          <a href="/projects" className="px-4 py-2 border rounded">View Projects</a>
+export default function Home(){
+  return (
+    <section className="grid gap-8">
+      <motion.div initial={{opacity:0, y:20}} animate={{opacity:1, y:0}} transition={{duration:0.6}} className="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h1 className="text-4xl font-extrabold">Hi — I'm <span className="text-teal-300">Shubham Gosai</span></h1>
+          <p className="mt-3 text-lg text-slate-300">Full Stack Developer Intern / Fresher — I build responsive, user-friendly, and scalable web apps with modern tools.</p>
+          <div className="mt-6 flex gap-3">
+            <a className="px-4 py-2 bg-teal-500 text-slate-900 rounded-md font-medium shadow" href="/ShubhamGosaiResume.pdf" download>Download Resume</a>
+            <a className="px-4 py-2 border border-slate-700 rounded-md" href="/projects">View Projects</a>
+          </div>
         </div>
-      </div>
+        <motion.div initial={{scale:0.95, opacity:0}} animate={{scale:1, opacity:1}} transition={{duration:0.6}} className="card">
+          <h3 className="font-semibold">Quick Info</h3>
+          <ul className="mt-3 text-sm text-slate-300 space-y-1">
+            <li>Location: Dehradun, India</li>
+            <li>Role: Full Stack Developer Intern / Fresher</li>
+            <li>Email: <a href="mailto:shubham@example.com" className="text-teal-300">shubham@example.com</a></li>
+          </ul>
+        </motion.div>
+      </motion.div>
     </section>
   )
 }

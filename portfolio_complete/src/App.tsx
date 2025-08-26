@@ -8,12 +8,13 @@ import Skills from './pages/Skills'
 import Projects from './pages/Projects'
 import Certifications from './pages/Certifications'
 import Contact from './pages/Contact'
+import Footer from './components/Footer'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900">
+    <div>
       <Navbar />
-      <main className="container py-8">
+      <main className="container py-10">
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/experience' element={<Experience />} />
@@ -24,6 +25,7 @@ export default function App() {
           <Route path='/contact' element={<Contact />} />
         </Routes>
       </main>
+      <Footer />
     </div>
   )
 }

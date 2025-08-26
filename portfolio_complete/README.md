@@ -1,6 +1,6 @@
-# Shubham Gosai — Portfolio (Generated)
+# Shubham Gosai — Animated Portfolio
 
-This is a React + TypeScript + Vite + Tailwind portfolio scaffold containing the details provided by the user.
+A modern React + TypeScript + Vite + Tailwind portfolio with Framer Motion animations. Project links and certificate links are placeholders (#) — replace when ready.
 
 ## Run locally
 
@@ -9,4 +9,4 @@ npm install
 npm run dev
 ```
 
-The app serves at http://localhost:5173 by default when using Vite.
+Open http://localhost:5173
